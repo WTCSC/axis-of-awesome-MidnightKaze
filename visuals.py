@@ -16,6 +16,7 @@ plt.scatter(df.Type, df.Megas, color="pink", label="Mega")
 
 # Generates the legend
 plt.legend()
+plt.title("Scatterplot of Pokemon Types")
 
 # Defines the axis labels
 plt.xlabel('Type')
@@ -59,6 +60,7 @@ fig = plt.gcf()
 fig.gca().add_artist(center_circle)
 plt.axis("equal")
 plt.tight_layout
+plt.title("Double Donut Graph of Pokemon Types and Types of Pokemon")
 
 # Shows the graphs
 plt.show()
