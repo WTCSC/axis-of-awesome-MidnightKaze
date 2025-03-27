@@ -19,7 +19,7 @@ The Double Donut Chart take's it a bit further. The outside circle has all of th
 
 __*Do note that for my sanity I only did this for Gen 5 and 6 combined. That totals a total of 451 Pokemon in this data sample. Yes it does include multiple forms of a Pokemon if it has one. Yes it is also probably off by a few.*__
 
-For your convience, here is what the graphs look like here:
+For your convenience, here is what the graphs look like here:
 
 ![scatterplot](imgs/Figure_1.png)
 
