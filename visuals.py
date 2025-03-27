@@ -21,29 +21,35 @@ plt.legend()
 plt.xlabel('Type')
 plt.ylabel('Number of Pokemon')
 
-# More complex double donut visualization
-# Preperation for the outside donut
-plt.figure(figsize=(7, 7))
+# It's double donut time >:3
+plt.figure(figsize=(8, 8))
 labels = df.Type
 sizes = df.Total
 colors = ["#a8a878", "#f08030", "#6890f0", "#78c850", "#f8d030", "#98d8d8", "#c03028", "#a040a0", "#e0c068", "#a890f0", "#f85888", "#a8b820", "#b8a038", "#705898", "#7038f8", "#705848", "#b8b8d0", "#ee99ac"]
-explode = [0] * len(labels)
-textprops = {"fontsize":14, "color":"black"}
+subgroup_labels = ["Regular", "Pseudo Ledgendary", "Ledgendary", "Mythical", "Mega"]
+subgroup_sizes = [df.Regular, df.PseudoLedgendary, df.Ledgendary, df.Mythical, df.Megas]
 
-plt.pie(sizes,
-        explode=explode,
-        pctdistance =0.9,
-        labels=labels,
-        colors=colors,
-        autopct="%.2f%%",
-        shadow=False,
-        textprops =textprops,
-        wedgeprops={"linewidth": 3.0, "edgecolor": "white"})
+outside_donut = plt.pie(sizes,
+                        labes=labels,
+                        colors=colors,
+                        startangle=90,
+                        frame=True,
+                        autopct="%.2f%%",
+                        pctdistance=0.80)
 
-center_circle = plt.Circle((0,0),0.65, color="grey", fc="white", linewidth=1.00)
+inside_donut = plt.pie(subgroup_sizes,
+                       labels=subgroup_labels,
+                       radius=0.7,
+                       startangle=90,
+                       labeldistance=0.5,
+                       autopct="%.2f%%",
+                       pctdistance=0.35)
+
+center_circle = plt.Circle((0,0), 0.35, color="white", linewidth=0)
 fig = plt.gcf()
 fig.gca().add_artist(center_circle)
 plt.axis("equal")
+plt.tight_layout
 
 # Shows the graph
 plt.show()
